@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+
+    <title>Contactanos</title>
+    <style>
+        .container {
+          background-color: rgb(71, 198, 248);
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          margin-top: 50px;
+        }
+    </style>
+        
+      </style>
+      <link rel="stylesheet" href="../Js/Formulario.js">
+      <link rel="stylesheet" href="/Js/CargarMenus.js">
+    </head>
+    <body>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                            aria-current="page" href="../Index.Html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="./Page1.html">Caracteristicas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Page2.Html  ">Formulario</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent"
+                    aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+            
+    <div id="menuContenedor"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <h2>Formulario de Contacto</h2>
+        <form id="formularioContacto">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje de Retroalimentación</label>
+            <textarea class="form-control" id="mensaje" rows="5" placeholder="Ingrese su mensaje" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="enviarBtn">Enviar</button>
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div id="footerContenedor"></div>
+</div>
+<script src="Bootstrap/JS/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="../js/cargarMenuPages.js"></script>
+<script src="../js/cargarFooter.js"></script>
+<script src="../js/TheJavaScript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const formulario = document.getElementById('formularioContacto');
+        const enviarBtn = document.getElementById('enviarBtn');
+
+        formulario.addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const nombreInput = document.getElementById('nombre');
+            const nombreValor = nombreInput.value;
+            const mensaje = document.getElementById("mensaje");
+            const mensajeValor = mensaje.value;
+            const correo = document.getElementById("correo");
+            const correoValor = correo.value;
+
+            Swal.fire({
+                icon: 'success',
+                title: '¡Formulario Enviado!',
+                text: `Gracias por tus comentarios ${nombreValor}, Tu mensaje ha sido enviado correctamente.`,
+            });
+
+            formulario.reset();
+        });
+    });
+</script>
+
+
+<!-- Footer de Bootstrap -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>© 2023 Josue Gamboa</p>
+</footer>
+    </body>
+</html>
